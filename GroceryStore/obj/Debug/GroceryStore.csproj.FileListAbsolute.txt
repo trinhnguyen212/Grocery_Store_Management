@@ -1,0 +1,12 @@
+C:\Users\tngu212\source\repos\GroceryStore\GroceryStore\bin\Debug\GroceryStore.exe.config
+C:\Users\tngu212\source\repos\GroceryStore\GroceryStore\bin\Debug\GroceryStore.exe
+C:\Users\tngu212\source\repos\GroceryStore\GroceryStore\bin\Debug\GroceryStore.pdb
+C:\Users\tngu212\source\repos\GroceryStore\GroceryStore\obj\Debug\GroceryStore.csproj.AssemblyReference.cache
+C:\Users\tngu212\source\repos\GroceryStore\GroceryStore\obj\Debug\GroceryStore.csproj.SuggestedBindingRedirects.cache
+C:\Users\tngu212\source\repos\GroceryStore\GroceryStore\obj\Debug\GroceryStore.Form1.resources
+C:\Users\tngu212\source\repos\GroceryStore\GroceryStore\obj\Debug\GroceryStore.Properties.Resources.resources
+C:\Users\tngu212\source\repos\GroceryStore\GroceryStore\obj\Debug\GroceryStore.csproj.GenerateResource.cache
+C:\Users\tngu212\source\repos\GroceryStore\GroceryStore\obj\Debug\GroceryStore.csproj.CoreCompileInputs.cache
+C:\Users\tngu212\source\repos\GroceryStore\GroceryStore\obj\Debug\GroceryStore.exe
+C:\Users\tngu212\source\repos\GroceryStore\GroceryStore\obj\Debug\GroceryStore.pdb
+C:\Users\tngu212\source\repos\GroceryStore\GroceryStore\bin\Debug\MyGrocerDB.accdb
