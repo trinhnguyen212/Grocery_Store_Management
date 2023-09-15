@@ -28,7 +28,11 @@ namespace GroceryStore
                 if (qd.VerifyUser(qd))
                 {
                     lblerror.Text = "";
+                    qd = qd.GetUserDetails(qd);
                     MessageBox.Show("Login Success");
+
+                    Dashboard da = new Dashboard(qd);
+                    da.Show();
                 }
                 else
                 {
@@ -48,6 +52,8 @@ namespace GroceryStore
         private void Form1_Load(object sender, EventArgs e)
         {
             lblerror.Visible = false;
+            Email.Text = "coderbab@gmail.com";
+            Password.Text = "123";
         }
     }
 }

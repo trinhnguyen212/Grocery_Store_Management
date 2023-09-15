@@ -9,4 +9,8 @@ C:\Users\tngu212\source\repos\GroceryStore\GroceryStore\obj\Debug\GroceryStore.c
 C:\Users\tngu212\source\repos\GroceryStore\GroceryStore\obj\Debug\GroceryStore.csproj.CoreCompileInputs.cache
 C:\Users\tngu212\source\repos\GroceryStore\GroceryStore\obj\Debug\GroceryStore.exe
 C:\Users\tngu212\source\repos\GroceryStore\GroceryStore\obj\Debug\GroceryStore.pdb
-C:\Users\tngu212\source\repos\GroceryStore\GroceryStore\bin\Debug\MyGrocerDB.accdb
+C:\Users\tngu212\source\repos\GroceryStore\GroceryStore\obj\Debug\GroceryStore.Dashboard.resources
+C:\Users\tngu212\source\repos\GroceryStore\GroceryStore\obj\Debug\GroceryStore.CreateUser.resources
+C:\Users\tngu212\source\repos\GroceryStore\GroceryStore\obj\Debug\GroceryStore.AddProduct.resources
+C:\Users\tngu212\source\repos\GroceryStore\GroceryStore\obj\Debug\GroceryStore.UpdateProduct.resources
+C:\Users\tngu212\source\repos\GroceryStore\GroceryStore\obj\Debug\GroceryStore.ViewSell.resources
