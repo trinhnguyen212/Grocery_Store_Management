@@ -62,6 +62,16 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.lblFinalPrice = new System.Windows.Forms.Label();
+            this.lblTotPrice = new System.Windows.Forms.Label();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblMinus = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -69,6 +79,7 @@
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -279,6 +290,7 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.lblTotPrice);
             this.panel2.Controls.Add(this.dataGridView3);
             this.panel2.Controls.Add(this.txtDiscount);
             this.panel2.Controls.Add(this.txtBMobile);
@@ -297,11 +309,17 @@
             this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.PName,
+            this.PPrice,
+            this.PQuantity,
+            this.Total});
             this.dataGridView3.Cursor = System.Windows.Forms.Cursors.Default;
             this.dataGridView3.Location = new System.Drawing.Point(-1, 127);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(425, 107);
+            this.dataGridView3.Size = new System.Drawing.Size(421, 107);
             this.dataGridView3.TabIndex = 3;
             this.dataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellClick);
             // 
@@ -370,6 +388,9 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Aquamarine;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.lblFinalPrice);
+            this.panel3.Controls.Add(this.lblMinus);
             this.panel3.Location = new System.Drawing.Point(12, 401);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(880, 37);
@@ -393,11 +414,93 @@
             this.label7.TabIndex = 5;
             this.label7.Text = "label7";
             // 
+            // lblFinalPrice
+            // 
+            this.lblFinalPrice.AutoSize = true;
+            this.lblFinalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFinalPrice.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblFinalPrice.Location = new System.Drawing.Point(485, 5);
+            this.lblFinalPrice.Name = "lblFinalPrice";
+            this.lblFinalPrice.Size = new System.Drawing.Size(29, 20);
+            this.lblFinalPrice.TabIndex = 4;
+            this.lblFinalPrice.Text = "=0";
+            // 
+            // lblTotPrice
+            // 
+            this.lblTotPrice.BackColor = System.Drawing.Color.White;
+            this.lblTotPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblTotPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotPrice.ForeColor = System.Drawing.Color.Red;
+            this.lblTotPrice.Location = new System.Drawing.Point(272, 241);
+            this.lblTotPrice.Name = "lblTotPrice";
+            this.lblTotPrice.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblTotPrice.Size = new System.Drawing.Size(140, 20);
+            this.lblTotPrice.TabIndex = 4;
+            this.lblTotPrice.Text = "120";
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "PID";
+            this.ID.Name = "ID";
+            // 
+            // PName
+            // 
+            this.PName.HeaderText = "ProductName";
+            this.PName.Name = "PName";
+            // 
+            // PPrice
+            // 
+            this.PPrice.HeaderText = "Price";
+            this.PPrice.Name = "PPrice";
+            // 
+            // PQuantity
+            // 
+            this.PQuantity.HeaderText = "Qty";
+            this.PQuantity.Name = "PQuantity";
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(267, 28);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "label7";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Blue;
+            this.label10.Location = new System.Drawing.Point(189, 5);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(82, 20);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Final Bill:";
+            // 
+            // lblMinus
+            // 
+            this.lblMinus.AutoSize = true;
+            this.lblMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinus.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblMinus.Location = new System.Drawing.Point(358, 5);
+            this.lblMinus.Name = "lblMinus";
+            this.lblMinus.Size = new System.Drawing.Size(42, 20);
+            this.lblMinus.TabIndex = 4;
+            this.lblMinus.Text = "(0-0)";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(892, 450);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel3);
@@ -419,6 +522,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -460,5 +565,15 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblFinalPrice;
+        private System.Windows.Forms.Label lblTotPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblMinus;
     }
 }

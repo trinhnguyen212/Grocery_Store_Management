@@ -92,9 +92,42 @@ namespace GroceryStore
         {
             if(txtQty.Text!=string.Empty && Convert.ToInt32(txtQty.Text)>0)
             {
-                label6.Text = Convert.ToInt32(txtQty.Text) * Convert.ToInt32(txtPrice.Text) + "";
+                label6.Text = (Convert.ToInt32(txtQty.Text) * Convert.ToInt32(txtPrice.Text)).ToString();
                 string[] row = new string[] {lblID.Text,txtProductName.Text,txtPrice.Text,txtQty.Text,label6.Text };
-                if (Convert.ToInt32(txtQty.Text) <= Convert.ToInt32(la))
+                if (Convert.ToInt32(txtQty.Text) <= Convert.ToInt32(label7.Text))
+                {
+                    dataGridView3.Rows.Add(row);
+                    txtProductName.Text = string.Empty;
+                    txtQty.Text = string.Empty;
+                    int a = 0;
+                    double total = 0;
+
+                    foreach (DataGridViewRow pb in dataGridView3.Rows)
+                    {
+                        total += Convert.ToDouble(dataGridView3.Rows[a].Cells["Total"].Value);
+                        a++;
+                    }
+                    lblTotPrice.Text = total.ToString();
+                    double btotal = Convert.ToInt32(lblTotPrice.Text);
+                    double discount = 0;
+                    if (txtDiscount.Text != string.Empty && Convert.ToDouble(txtDiscount.Text)> 0.0)
+
+                    {
+                        discount = (double)(btotal * Convert.ToDouble(txtDiscount.Text)/100);
+                    }
+                    else
+                    {
+                        discount = 0.0;
+                    }
+                    label9.Text = discount.ToString();
+                    lblMinus.Text = "(" + btotal.ToString() + " - " + discount.ToString() + ")";
+                    lblFinalPrice.Text ="= " +  (btotal - discount).ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Please select less Quantity than stock");
+                }
+                
                 
             }
             else
