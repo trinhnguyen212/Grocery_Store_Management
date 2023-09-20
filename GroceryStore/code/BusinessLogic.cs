@@ -65,6 +65,25 @@ namespace GroceryStore.code
 
         }
 
+        //bind Listbox
+        public void FillListBox(ListBox lb, String query)
+        {
+            openConnection();
+            OleDbDataReader rec = SelectQuery(query);
+
+           
+            //   lb.ValueMember = "I88D";
+            while (rec.Read())
+            {
+                lb.Items.Add (rec[1].ToString());
+                
+              
+            }
+
+           
+
+        }
+
         //Bind Gridview
 
         public void filldataGrid(DataGridView dg, String query) 
@@ -76,6 +95,8 @@ namespace GroceryStore.code
             adp.Fill(ds);
             dg.DataSource = ds.Tables[0];
         }
+       
+
     }
 
    

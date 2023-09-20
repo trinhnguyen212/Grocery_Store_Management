@@ -36,6 +36,9 @@
             this.PQuantity = new System.Windows.Forms.TextBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.lbxDepart = new System.Windows.Forms.ListBox();
+            this.cbxCategory = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -50,7 +53,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 73);
+            this.label2.Location = new System.Drawing.Point(14, 239);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 13);
             this.label2.TabIndex = 0;
@@ -59,7 +62,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 138);
+            this.label3.Location = new System.Drawing.Point(14, 304);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 13);
             this.label3.TabIndex = 0;
@@ -75,14 +78,14 @@
             // 
             // PPrice
             // 
-            this.PPrice.Location = new System.Drawing.Point(206, 70);
+            this.PPrice.Location = new System.Drawing.Point(188, 236);
             this.PPrice.Name = "PPrice";
             this.PPrice.Size = new System.Drawing.Size(206, 20);
             this.PPrice.TabIndex = 1;
             // 
             // PQuantity
             // 
-            this.PQuantity.Location = new System.Drawing.Point(206, 135);
+            this.PQuantity.Location = new System.Drawing.Point(188, 301);
             this.PQuantity.Name = "PQuantity";
             this.PQuantity.Size = new System.Drawing.Size(206, 20);
             this.PQuantity.TabIndex = 1;
@@ -94,7 +97,7 @@
             this.btnReset.FlatAppearance.BorderSize = 5;
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.ForeColor = System.Drawing.Color.Red;
-            this.btnReset.Location = new System.Drawing.Point(175, 220);
+            this.btnReset.Location = new System.Drawing.Point(177, 350);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(106, 23);
             this.btnReset.TabIndex = 2;
@@ -108,7 +111,7 @@
             this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.GreenYellow;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.SpringGreen;
-            this.btnAdd.Location = new System.Drawing.Point(337, 219);
+            this.btnAdd.Location = new System.Drawing.Point(337, 350);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 3;
@@ -116,11 +119,42 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // lbxDepart
+            // 
+            this.lbxDepart.FormattingEnabled = true;
+            this.lbxDepart.Location = new System.Drawing.Point(218, 69);
+            this.lbxDepart.Name = "lbxDepart";
+            this.lbxDepart.Size = new System.Drawing.Size(113, 95);
+            this.lbxDepart.TabIndex = 4;
+            this.lbxDepart.SelectedIndexChanged += new System.EventHandler(this.lbxDepart_SelectedIndexChanged);
+            // 
+            // cbxCategory
+            // 
+            this.cbxCategory.FormattingEnabled = true;
+            this.cbxCategory.Location = new System.Drawing.Point(467, 84);
+            this.cbxCategory.Name = "cbxCategory";
+            this.cbxCategory.Size = new System.Drawing.Size(121, 21);
+            this.cbxCategory.TabIndex = 5;
+            this.cbxCategory.SelectedIndexChanged += new System.EventHandler(this.cbxCategory_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(553, 289);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "label4";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
             // AddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cbxCategory);
+            this.Controls.Add(this.lbxDepart);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.PQuantity);
@@ -131,6 +165,7 @@
             this.Controls.Add(this.label1);
             this.Name = "AddProduct";
             this.Text = "AddProduct";
+            this.Load += new System.EventHandler(this.AddProduct_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,5 +181,8 @@
         private System.Windows.Forms.TextBox PQuantity;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.ListBox lbxDepart;
+        private System.Windows.Forms.ComboBox cbxCategory;
+        private System.Windows.Forms.Label label4;
     }
 }

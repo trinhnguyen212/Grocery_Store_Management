@@ -51,7 +51,13 @@
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblTotPrice = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtDiscount = new System.Windows.Forms.TextBox();
             this.txtBMobile = new System.Windows.Forms.TextBox();
             this.txtBName = new System.Windows.Forms.TextBox();
@@ -60,18 +66,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblFinalPrice = new System.Windows.Forms.Label();
+            this.lblMinus = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.lblFinalPrice = new System.Windows.Forms.Label();
-            this.lblTotPrice = new System.Windows.Forms.Label();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lblMinus = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -225,6 +225,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(449, 120);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // panel4
             // 
@@ -304,6 +305,19 @@
             this.panel2.Size = new System.Drawing.Size(425, 297);
             this.panel2.TabIndex = 2;
             // 
+            // lblTotPrice
+            // 
+            this.lblTotPrice.BackColor = System.Drawing.Color.White;
+            this.lblTotPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblTotPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotPrice.ForeColor = System.Drawing.Color.Red;
+            this.lblTotPrice.Location = new System.Drawing.Point(272, 241);
+            this.lblTotPrice.Name = "lblTotPrice";
+            this.lblTotPrice.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblTotPrice.Size = new System.Drawing.Size(140, 20);
+            this.lblTotPrice.TabIndex = 4;
+            this.lblTotPrice.Text = "120";
+            // 
             // dataGridView3
             // 
             this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -322,6 +336,31 @@
             this.dataGridView3.Size = new System.Drawing.Size(421, 107);
             this.dataGridView3.TabIndex = 3;
             this.dataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellClick);
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "PID";
+            this.ID.Name = "ID";
+            // 
+            // PName
+            // 
+            this.PName.HeaderText = "ProductName";
+            this.PName.Name = "PName";
+            // 
+            // PPrice
+            // 
+            this.PPrice.HeaderText = "Price";
+            this.PPrice.Name = "PPrice";
+            // 
+            // PQuantity
+            // 
+            this.PQuantity.HeaderText = "Qty";
+            this.PQuantity.Name = "PQuantity";
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
             // 
             // txtDiscount
             // 
@@ -396,6 +435,40 @@
             this.panel3.Size = new System.Drawing.Size(880, 37);
             this.panel3.TabIndex = 3;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Blue;
+            this.label10.Location = new System.Drawing.Point(189, 5);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(82, 20);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Final Bill:";
+            // 
+            // lblFinalPrice
+            // 
+            this.lblFinalPrice.AutoSize = true;
+            this.lblFinalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFinalPrice.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblFinalPrice.Location = new System.Drawing.Point(485, 5);
+            this.lblFinalPrice.Name = "lblFinalPrice";
+            this.lblFinalPrice.Size = new System.Drawing.Size(29, 20);
+            this.lblFinalPrice.TabIndex = 4;
+            this.lblFinalPrice.Text = "=0";
+            // 
+            // lblMinus
+            // 
+            this.lblMinus.AutoSize = true;
+            this.lblMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinus.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblMinus.Location = new System.Drawing.Point(358, 5);
+            this.lblMinus.Name = "lblMinus";
+            this.lblMinus.Size = new System.Drawing.Size(42, 20);
+            this.lblMinus.TabIndex = 4;
+            this.lblMinus.Text = "(0-0)";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -414,55 +487,6 @@
             this.label7.TabIndex = 5;
             this.label7.Text = "label7";
             // 
-            // lblFinalPrice
-            // 
-            this.lblFinalPrice.AutoSize = true;
-            this.lblFinalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFinalPrice.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lblFinalPrice.Location = new System.Drawing.Point(485, 5);
-            this.lblFinalPrice.Name = "lblFinalPrice";
-            this.lblFinalPrice.Size = new System.Drawing.Size(29, 20);
-            this.lblFinalPrice.TabIndex = 4;
-            this.lblFinalPrice.Text = "=0";
-            // 
-            // lblTotPrice
-            // 
-            this.lblTotPrice.BackColor = System.Drawing.Color.White;
-            this.lblTotPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblTotPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotPrice.ForeColor = System.Drawing.Color.Red;
-            this.lblTotPrice.Location = new System.Drawing.Point(272, 241);
-            this.lblTotPrice.Name = "lblTotPrice";
-            this.lblTotPrice.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblTotPrice.Size = new System.Drawing.Size(140, 20);
-            this.lblTotPrice.TabIndex = 4;
-            this.lblTotPrice.Text = "120";
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "PID";
-            this.ID.Name = "ID";
-            // 
-            // PName
-            // 
-            this.PName.HeaderText = "ProductName";
-            this.PName.Name = "PName";
-            // 
-            // PPrice
-            // 
-            this.PPrice.HeaderText = "Price";
-            this.PPrice.Name = "PPrice";
-            // 
-            // PQuantity
-            // 
-            this.PQuantity.HeaderText = "Qty";
-            this.PQuantity.Name = "PQuantity";
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -471,29 +495,6 @@
             this.label9.Size = new System.Drawing.Size(35, 13);
             this.label9.TabIndex = 5;
             this.label9.Text = "label7";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Blue;
-            this.label10.Location = new System.Drawing.Point(189, 5);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 20);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "Final Bill:";
-            // 
-            // lblMinus
-            // 
-            this.lblMinus.AutoSize = true;
-            this.lblMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMinus.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblMinus.Location = new System.Drawing.Point(358, 5);
-            this.lblMinus.Name = "lblMinus";
-            this.lblMinus.Size = new System.Drawing.Size(42, 20);
-            this.lblMinus.TabIndex = 4;
-            this.lblMinus.Text = "(0-0)";
             // 
             // Dashboard
             // 

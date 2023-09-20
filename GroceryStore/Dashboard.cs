@@ -52,6 +52,7 @@ namespace GroceryStore
         {
             qdb.GetProduct(dataGridView1);
             qdb.GetUser(dataGridView2);
+           // qdb.GetDepartment(cbx);
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -134,6 +135,11 @@ namespace GroceryStore
             {
                 MessageBox.Show("Enter Product Quality > 0");
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

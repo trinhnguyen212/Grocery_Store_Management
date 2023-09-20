@@ -117,6 +117,41 @@ namespace GroceryStore.code
             bl.filldataGrid(dg, query);
         }
 
+        public void GetDepartment(ListBox lb)
+        {
+            string query = "select * from Department";
+            bl.FillListBox(lb, query);
+           // lb.ValueMember = "ID";
+
+        }
+
+        
+
+        public void GetCategory(ComboBox cb, int departid)
+        {
+            string query = string.Format("select Category from Category where Category.DepartmentID = {0}",departid);
+            bl.FillComboBox(cb, query);
+        }
+
+        public int GetDepartID(string tabname)
+        {
+            String query = String.Format("Select ID From Department where DepartName='{0}'", tabname);
+            OleDbDataReader rec = bl.SelectQuery(query);
+            while (rec.Read())
+            {
+                if (!rec[0].ToString().Equals(""))
+                {
+                    return Convert.ToInt32(rec[0].ToString());
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+
+            return 0;
+        }
+
         public bool UpdateProduct(String name, String price, String qty, int id)
         {
             string query = string.Format("update Product set [PName]='{0}', [PPrice]={1}, [PQuantity]={2} where ID={3}", name, price, qty, id);

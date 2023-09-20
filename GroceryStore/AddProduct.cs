@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GroceryStore
 {
@@ -51,6 +53,40 @@ namespace GroceryStore
             PPrice.Text = "";
             PQuantity.Text = "";
             PName.Focus();
+        }
+
+       
+
+        private void AddProduct_Load(object sender, EventArgs e)
+        {
+            qdb.GetDepartment(lbxDepart);
+            
+        }
+
+        private void lbxDepart_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbxCategory.Items.Clear();
+
+            if (lbxDepart.Text != string.Empty)
+            {
+               // qdb.GetDepartID(lbxDepart.Text);
+                label4.Text = qdb.GetDepartID(lbxDepart.Text).ToString();
+                qdb.GetCategory(cbxCategory, qdb.GetDepartID(lbxDepart.Text));
+            }
+
+          
+
+        }
+
+      
+        private void cbxCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
