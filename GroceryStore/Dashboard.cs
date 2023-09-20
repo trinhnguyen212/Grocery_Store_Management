@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -140,6 +141,28 @@ namespace GroceryStore
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkedListBox1_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (e.NewValue == CheckState.Checked)
+            {
+                IEnumerator myEnumerator;
+                myEnumerator = checkedListBox1.CheckedIndices.GetEnumerator();
+                int y;
+                while (myEnumerator.MoveNext() != false)
+                {
+                    y = (int)myEnumerator.Current;
+                    checkedListBox1.SetItemChecked(y, false);
+                }
+            }
+
+            txtDiscount.Text = checkedListBox1.Text;
         }
     }
 }

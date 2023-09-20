@@ -76,8 +76,6 @@ namespace GroceryStore.code
             while (rec.Read())
             {
                 lb.Items.Add (rec[1].ToString());
-                
-              
             }
 
            

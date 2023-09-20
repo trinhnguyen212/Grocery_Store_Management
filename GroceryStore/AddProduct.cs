@@ -66,7 +66,7 @@ namespace GroceryStore
         private void lbxDepart_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbxCategory.Items.Clear();
-
+            cbxCategory.Text = "Select Product Category";
             if (lbxDepart.Text != string.Empty)
             {
                // qdb.GetDepartID(lbxDepart.Text);
