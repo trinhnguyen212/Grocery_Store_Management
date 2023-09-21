@@ -7,9 +7,7 @@ using System.Data;
 using System.Data.OleDb;
 using System.Windows.Forms;
 using System.Configuration;
-
-
-
+using System.Drawing;
 
 namespace GroceryStore.code
 {
@@ -101,9 +99,10 @@ namespace GroceryStore.code
             return 0;
         }
 
-        public bool AddProduct(String name, int price, int qty)
+        public bool AddProduct(string cate, String name, int price, int qty,Image image)
         {
-            String query = String.Format("insert into Product values ({0} + 1,'{1}', {2},{3})", GetMaxID("Product"), name, price, qty);
+            
+            String query = String.Format("insert into Product values ({0} + 1,{1},'{2}', {3},{4}, {5})", GetMaxID("Product"), GetCategoryID(cate), name, price, qty, image);
             if (bl.NonQuery(query) == 1) 
             {
                 return true;
@@ -136,6 +135,25 @@ namespace GroceryStore.code
         public int GetDepartID(string tabname)
         {
             String query = String.Format("Select ID From Department where DepartName='{0}'", tabname);
+            OleDbDataReader rec = bl.SelectQuery(query);
+            while (rec.Read())
+            {
+                if (!rec[0].ToString().Equals(""))
+                {
+                    return Convert.ToInt32(rec[0].ToString());
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+
+            return 0;
+        }
+
+        public int GetCategoryID(string tabname)
+        {
+            String query = String.Format("Select ID From Category where Category='{0}'", tabname);
             OleDbDataReader rec = bl.SelectQuery(query);
             while (rec.Read())
             {
