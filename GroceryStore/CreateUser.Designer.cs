@@ -42,6 +42,11 @@
             this.UMale = new System.Windows.Forms.RadioButton();
             this.btnCreateUser = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.txtEdit = new System.Windows.Forms.RichTextBox();
+            this.button_load = new System.Windows.Forms.Button();
+            this.button_save = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -183,11 +188,47 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // txtEdit
+            // 
+            this.txtEdit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEdit.Location = new System.Drawing.Point(701, 35);
+            this.txtEdit.Name = "txtEdit";
+            this.txtEdit.Size = new System.Drawing.Size(393, 214);
+            this.txtEdit.TabIndex = 5;
+            this.txtEdit.Text = "";
+            // 
+            // button_load
+            // 
+            this.button_load.Location = new System.Drawing.Point(748, 372);
+            this.button_load.Name = "button_load";
+            this.button_load.Size = new System.Drawing.Size(75, 23);
+            this.button_load.TabIndex = 6;
+            this.button_load.Text = "Load";
+            this.button_load.UseVisualStyleBackColor = true;
+            this.button_load.Click += new System.EventHandler(this.button_load_Click);
+            // 
+            // button_save
+            // 
+            this.button_save.Location = new System.Drawing.Point(998, 372);
+            this.button_save.Name = "button_save";
+            this.button_save.Size = new System.Drawing.Size(75, 23);
+            this.button_save.TabIndex = 7;
+            this.button_save.Text = "Save";
+            this.button_save.UseVisualStyleBackColor = true;
+            this.button_save.Click += new System.EventHandler(this.button_save_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // CreateUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1206, 612);
+            this.Controls.Add(this.button_save);
+            this.Controls.Add(this.button_load);
+            this.Controls.Add(this.txtEdit);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCreateUser);
             this.Controls.Add(this.groupBox1);
@@ -226,5 +267,10 @@
         private System.Windows.Forms.RadioButton UMale;
         private System.Windows.Forms.Button btnCreateUser;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RichTextBox txtEdit;
+        private System.Windows.Forms.Button button_load;
+        private System.Windows.Forms.Button button_save;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

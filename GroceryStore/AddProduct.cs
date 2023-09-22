@@ -25,13 +25,13 @@ namespace GroceryStore
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-           Bitmap BmpImage = new Bitmap(pictureBox1.Image);
+           
             
             if(PName.Text != string.Empty && PPrice.Text != string.Empty && PQuantity.Text != string.Empty && cbxCategory.Text != string.Empty )
             {
                
 
-                if (qdb.AddProduct(cbxCategory.Text.ToString(),PName.Text, Convert.ToInt32(PPrice.Text), Convert.ToInt32(PQuantity.Text), BmpImage))
+                if (qdb.AddProduct(cbxCategory.Text.ToString(),PName.Text, Convert.ToInt32(PPrice.Text), Convert.ToInt32(PQuantity.Text)))
                 {
                     PName.Text = "";
                     PPrice.Text = "";
@@ -60,6 +60,8 @@ namespace GroceryStore
             PName.Text = "";
             PPrice.Text = "";
             PQuantity.Text = "";
+            cbxCategory.Text = "Select Product Category";
+            lbxDepart.ClearSelected();
             PName.Focus();
         }
 
@@ -92,45 +94,8 @@ namespace GroceryStore
             
         }
 
-        private void btnBrowse_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                using(OpenFileDialog fileDialog = new OpenFileDialog() { Filter="JPEG|*.jpg", ValidateNames=false}) 
-                {
-                    if (fileDialog.ShowDialog()== DialogResult.OK)
-                    {
-                        pictureBox1.Image =new Bitmap(fileDialog.FileName); 
-                        
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+        
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "Images|*.png;*.bmp;*.jpg";
-            ImageFormat format = ImageFormat.Png;
-            if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                string ext = System.IO.Path.GetExtension(sfd.FileName);
-                switch (ext)
-                {
-                    case ".jpg":
-                        format = ImageFormat.Jpeg;
-                        break;
-                    case ".bmp":
-                        format = ImageFormat.Bmp;
-                        break;
-                }
-                pictureBox1.Image.Save(sfd.FileName, format);
-            }
-
-        }
+        
     }
 }

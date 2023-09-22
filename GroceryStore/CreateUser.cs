@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.IO;
 namespace GroceryStore
 {
     public partial class CreateUser : Form
@@ -73,6 +73,47 @@ namespace GroceryStore
             UMobile.Text = "";
             UAddress.Text = "";
             UName.Text = "";
+        }
+
+        private void button_load_Click(object sender, EventArgs e)
+        {
+            TextReader tr;
+            openFileDialog1.Filter = "Text File (3.txt) |  *.txt";
+            openFileDialog1.ShowDialog(this);
+            try
+            {
+                tr = File.OpenText(openFileDialog1.FileName);
+                txtEdit.Text = tr.ReadToEnd();
+                tr.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in opening the file");
+            }
+            
+        }
+
+        private void button_save_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog SaveText = new SaveFileDialog();
+            SaveText.Filter = "Text File (*.txt) |  *.txt";
+            if (SaveText.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = SaveText.FileName;
+                try
+                {
+                    using (StreamWriter writer = new StreamWriter(filePath))
+                    {
+                        writer.Write(txtEdit.Text);
+                    }
+
+                    MessageBox.Show("File saved successfully");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occured: {ex.Message}", "Error");
+                }
+            }
         }
     }
 }

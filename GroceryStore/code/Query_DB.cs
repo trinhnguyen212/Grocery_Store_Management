@@ -99,10 +99,10 @@ namespace GroceryStore.code
             return 0;
         }
 
-        public bool AddProduct(string cate, String name, int price, int qty,Image image)
+        public bool AddProduct(string cate, String name, int price, int qty)
         {
             
-            String query = String.Format("insert into Product values ({0} + 1,{1},'{2}', {3},{4}, {5})", GetMaxID("Product"), GetCategoryID(cate), name, price, qty, image);
+            String query = String.Format("insert into Product values ({0} + 1,{1},'{2}', {3},{4})", GetMaxID("Product"), GetCategoryID(cate), name, price, qty);
             if (bl.NonQuery(query) == 1) 
             {
                 return true;

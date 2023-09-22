@@ -14,6 +14,8 @@ namespace GroceryStore
     public partial class Dashboard : Form
     {
         code.Query_DB qdb = new code.Query_DB();
+        ArrayList shoppingList = new ArrayList();
+
         public Dashboard(code.Query_DB qd)
         {
             InitializeComponent();
@@ -163,6 +165,11 @@ namespace GroceryStore
             }
 
             txtDiscount.Text = checkedListBox1.Text;
+        }
+
+        private void txtDiscount_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
